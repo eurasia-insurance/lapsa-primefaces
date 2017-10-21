@@ -12,12 +12,9 @@
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Lapsa Lib : Primefaces Lib</name>
+	<name>Lapsa Lib : Primefaces</name>
 
 	<properties>
-		<!-- BOMS -->
-		<javax-javaee-bom.version>7.0-SNAPSHOT</javax-javaee-bom.version>
-		<java-commons.version>1.0-SNAPSHOT</java-commons.version>
 		<!-- tech -->
 		<javax-faces-commons.version>1.0-SNAPSHOT</javax-faces-commons.version>
 		<!-- external -->
@@ -26,21 +23,6 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- BOMS -->
-			<dependency>
-				<groupId>tech.lapsa.java</groupId>
-				<artifactId>java-commons-root</artifactId>
-				<version>${java-commons.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>tech.lapsa.javax</groupId>
-				<artifactId>javax-javaee-bom</artifactId>
-				<version>${javax-javaee-bom.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
 			<!-- tech -->
 			<dependency>
 				<groupId>tech.lapsa.javax</groupId>
@@ -58,32 +40,16 @@
 	<dependencies>
 		<!-- tech -->
 		<dependency>
-			<groupId>tech.lapsa.java</groupId>
-			<artifactId>java-commons</artifactId>
-			<scope>compile</scope>
-			<optional>false</optional>
-		</dependency>
-		<dependency>
 			<groupId>tech.lapsa.javax</groupId>
 			<artifactId>javax-faces-commons</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
-		<!-- Java EE -->
-		<dependency>
-			<groupId>javax.enterprise</groupId>
-			<artifactId>cdi-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.faces</groupId>
-			<artifactId>javax.faces-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
-			<scope>provided</scope>
+			<scope>compile</scope>
+			<optional>false</optional>
 		</dependency>
 	</dependencies>
 
