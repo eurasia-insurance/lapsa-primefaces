@@ -1,4 +1,4 @@
-package tech.lapsa.lapsa.primefaces.converter;
+package tech.lapsa.lapsa.primefaces.calendar.converter;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -14,7 +14,7 @@ import javax.faces.convert.FacesConverter;
  * @author Vadim.Isaev
  *
  */
-@FacesConverter(value = "tech.lapsa.lapsa.primefaces.converter.InstantConverter")
+@FacesConverter(value = "tech.lapsa.lapsa.primefaces.calendar.converter.InstantConverter")
 public class InstantConverter extends ATemporalConverter<Instant> {
 
     public static final ZoneId DEFAULT_ZONE_ID = ZoneId.systemDefault();

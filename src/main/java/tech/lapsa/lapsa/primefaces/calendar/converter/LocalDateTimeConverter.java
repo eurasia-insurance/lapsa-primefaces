@@ -1,4 +1,4 @@
-package tech.lapsa.lapsa.primefaces.converter;
+package tech.lapsa.lapsa.primefaces.calendar.converter;
 
 import java.time.LocalDateTime;
 
@@ -12,7 +12,7 @@ import javax.faces.convert.FacesConverter;
  * @author Vadim.Isaev
  *
  */
-@FacesConverter(value = "tech.lapsa.lapsa.primefaces.converter.LocalDateTimeConverter")
+@FacesConverter(value = "tech.lapsa.lapsa.primefaces.calendar.converter.LocalDateTimeConverter")
 public class LocalDateTimeConverter extends ATemporalConverter<LocalDateTime> {
 
     public LocalDateTimeConverter() {

@@ -1,4 +1,4 @@
-package tech.lapsa.lapsa.primefaces.converter;
+package tech.lapsa.lapsa.primefaces.calendar.converter;
 
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;

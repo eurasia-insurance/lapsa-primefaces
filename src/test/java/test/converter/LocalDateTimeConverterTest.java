@@ -8,7 +8,7 @@ import java.time.temporal.ChronoUnit;
 
 import org.junit.Test;
 
-import tech.lapsa.lapsa.primefaces.converter.LocalDateTimeConverter;
+import tech.lapsa.lapsa.primefaces.calendar.converter.LocalDateTimeConverter;
 
 public class LocalDateTimeConverterTest {
 

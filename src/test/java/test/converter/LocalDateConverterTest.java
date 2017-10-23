@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 import org.junit.Test;
 
-import tech.lapsa.lapsa.primefaces.converter.LocalDateConverter;
+import tech.lapsa.lapsa.primefaces.calendar.converter.LocalDateConverter;
 
 public class LocalDateConverterTest {
 
