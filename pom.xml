@@ -15,6 +15,8 @@
 	<name>Lapsa Lib : Primefaces</name>
 
 	<properties>
+		<!-- BOMS -->
+		<javax-javaee-bom.version>7.0-SNAPSHOT</javax-javaee-bom.version>
 		<!-- tech -->
 		<javax-faces-commons.version>1.0-SNAPSHOT</javax-faces-commons.version>
 		<!-- external -->
@@ -23,6 +25,14 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- BOMS -->
+			<dependency>
+				<groupId>tech.lapsa.javax</groupId>
+				<artifactId>javax-javaee-bom</artifactId>
+				<version>${javax-javaee-bom.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
 			<!-- tech -->
 			<dependency>
 				<groupId>tech.lapsa.javax</groupId>
@@ -50,6 +60,23 @@
 			<artifactId>primefaces</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>
+		</dependency>
+		<!-- JavaEE -->
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>javax.faces-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

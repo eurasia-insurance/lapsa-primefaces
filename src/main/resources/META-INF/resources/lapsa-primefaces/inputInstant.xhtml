@@ -21,8 +21,8 @@
 	<cc:implementation>
 		<p:calendar id="value" value="#{cc.attrs.value}" showOn="focus"
 			navigator="true" title="#{cc.attrs.title}"
-			pattern="dd.MM.yyyy HH:mm:ssZ" onfocus="select()"
-			converter="instantConverter"
+			pattern="yyyy-MM-dd HH:mm:ss" onfocus="select()"
+			converter="tech.lapsa.lapsa.primefaces.converter.InstantConverter"
 			placeholder="#{cc.attrs.placeholder}">
 			<p:ajax event="dateSelect" process="#{cc.attrs.process}"
 				update="#{cc.attrs.update}" listener="#{cc.attrs.changedListener}" />
