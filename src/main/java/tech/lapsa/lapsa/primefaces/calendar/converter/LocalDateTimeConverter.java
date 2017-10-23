@@ -1,5 +1,7 @@
 package tech.lapsa.lapsa.primefaces.calendar.converter;
 
+import java.time.DateTimeException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.faces.convert.FacesConverter;
@@ -21,7 +23,11 @@ public class LocalDateTimeConverter extends ATemporalConverter<LocalDateTime> {
 
     @Override
     protected LocalDateTime convertString(String value) {
-	return LocalDateTime.from(Formatters.DATE_TIME_FORMATTER.parse(value));
+	try {
+	    return LocalDateTime.from(Formatters.DATE_TIME_FORMATTER.parse(value));
+	} catch (DateTimeException e) {
+	    return LocalDate.from(Formatters.DATE_FORMATTER.parse(value)).atStartOfDay();
+	}
     }
 
     @Override

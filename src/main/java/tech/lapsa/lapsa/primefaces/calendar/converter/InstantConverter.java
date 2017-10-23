@@ -1,6 +1,8 @@
 package tech.lapsa.lapsa.primefaces.calendar.converter;
 
+import java.time.DateTimeException;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
@@ -25,10 +27,19 @@ public class InstantConverter extends ATemporalConverter<Instant> {
 
     @Override
     protected Instant convertString(String value) {
-	return LocalDateTime.from( //
-		Formatters.DATE_TIME_FORMATTER.parse(value)) //
-		.atZone(DEFAULT_ZONE_ID) //
-		.toInstant();
+	try {
+	    return LocalDateTime.from( //
+		    Formatters.DATE_TIME_FORMATTER.parse(value)) //
+		    .atZone(DEFAULT_ZONE_ID) //
+		    .toInstant();
+	} catch (DateTimeException e) {
+	    return LocalDate.from( //
+		    Formatters.DATE_FORMATTER.parse(value)) //
+		    .atStartOfDay() //
+		    .atZone(DEFAULT_ZONE_ID)
+		    .toInstant();
+	}
+
     }
 
     @Override
