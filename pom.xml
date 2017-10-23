@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>tech.lapsa.maven</groupId>
@@ -17,8 +18,7 @@
 	<properties>
 		<!-- BOMS -->
 		<javax-javaee-bom.version>7.0-SNAPSHOT</javax-javaee-bom.version>
-		<!-- tech -->
-		<javax-faces-commons.version>1.0-SNAPSHOT</javax-faces-commons.version>
+		<java-commons.version>1.0-SNAPSHOT</java-commons.version>
 		<!-- external -->
 		<primefaces.version>5.3.16</primefaces.version>
 	</properties>
@@ -33,12 +33,14 @@
 				<scope>import</scope>
 				<type>pom</type>
 			</dependency>
-			<!-- tech -->
 			<dependency>
-				<groupId>tech.lapsa.javax</groupId>
-				<artifactId>javax-faces-commons</artifactId>
-				<version>${javax-faces-commons.version}</version>
+				<groupId>tech.lapsa.java</groupId>
+				<artifactId>java-commons-root</artifactId>
+				<version>${java-commons.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
 			</dependency>
+			<!-- tech -->
 			<dependency>
 				<groupId>org.primefaces</groupId>
 				<artifactId>primefaces</artifactId>
@@ -50,8 +52,8 @@
 	<dependencies>
 		<!-- tech -->
 		<dependency>
-			<groupId>tech.lapsa.javax</groupId>
-			<artifactId>javax-faces-commons</artifactId>
+			<groupId>tech.lapsa.java</groupId>
+			<artifactId>java-commons</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>
 		</dependency>
