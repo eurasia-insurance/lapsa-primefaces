@@ -6,15 +6,14 @@
 	xmlns:p="http://primefaces.org/ui">
 
 	<cc:interface>
-		<cc:attribute name="value" required="true"
-			type="java.time.LocalDateTime" />
+		<cc:attribute name="value" required="true" type="java.time.Instant" />
 		<cc:attribute name="process" required="false" type="java.lang.String" />
 		<cc:attribute name="update" required="false" type="java.lang.String" />
 		<cc:attribute name="placeholder" required="false"
 			type="java.lang.String" />
 		<cc:attribute name="title" required="false" type="java.lang.String" />
 		<cc:attribute name="changedListener"
-			method-signature="void listener()" default="#{lapsaVoid.onVoid}" />
+			method-signature="void listener()" default="#{void.onVoid}" />
 		<cc:editableValueHolder name="valueName" targets="value" />
 	</cc:interface>
 
