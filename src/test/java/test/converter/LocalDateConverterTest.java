@@ -13,14 +13,14 @@ public class LocalDateConverterTest {
 
     @Test
     public void mainTest() {
-	LocalDateConverter cc = new LocalDateConverter();
+	final LocalDateConverter cc = new LocalDateConverter();
 
 	{
-	    LocalDate source = LocalDate.now();
+	    final LocalDate source = LocalDate.now();
 	    System.out.println("Source: " + source);
-	    String string = cc.getAsString(null, null, source);
+	    final String string = cc.getAsString(null, null, source);
 	    System.out.println("Intermediate (string): " + string);
-	    LocalDate target = (LocalDate) cc.getAsObject(null, null, string);
+	    final LocalDate target = (LocalDate) cc.getAsObject(null, null, string);
 	    System.out.println("Target: " + target);
 
 	    assertThat(target, allOf(not(nullValue()), equalTo(source)));
@@ -28,11 +28,11 @@ public class LocalDateConverterTest {
 	}
 
 	{
-	    String source = "2017-05-04";
+	    final String source = "2017-05-04";
 	    System.out.println("Source: " + source);
-	    LocalDate string = (LocalDate) cc.getAsObject(null, null, source);
+	    final LocalDate string = (LocalDate) cc.getAsObject(null, null, source);
 	    System.out.println("Intermediate (LocalDate): " + string);
-	    String target = cc.getAsString(null, null, string);
+	    final String target = cc.getAsString(null, null, string);
 	    System.out.println("Target: " + target);
 
 	    assertThat(target, allOf(not(nullValue()), equalTo(target)));

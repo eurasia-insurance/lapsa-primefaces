@@ -14,14 +14,14 @@ public class LocalDateTimeConverterTest {
 
     @Test
     public void mainTest() {
-	LocalDateTimeConverter cc = new LocalDateTimeConverter();
+	final LocalDateTimeConverter cc = new LocalDateTimeConverter();
 
 	{
-	    LocalDateTime source = LocalDateTime.now();
+	    final LocalDateTime source = LocalDateTime.now();
 	    System.out.println("Source: " + source);
-	    String string = cc.getAsString(null, null, source);
+	    final String string = cc.getAsString(null, null, source);
 	    System.out.println("Intermediate (string): " + string);
-	    LocalDateTime target = (LocalDateTime) cc.getAsObject(null, null, string);
+	    final LocalDateTime target = (LocalDateTime) cc.getAsObject(null, null, string);
 	    System.out.println("Target: " + target);
 
 	    assertThat(target, allOf(not(nullValue()), equalTo(source.truncatedTo(ChronoUnit.SECONDS))));
@@ -29,11 +29,11 @@ public class LocalDateTimeConverterTest {
 	}
 
 	{
-	    String source = "2017-10-23 09:56:21";
+	    final String source = "2017-10-23 09:56:21";
 	    System.out.println("Source: " + source);
-	    LocalDateTime string = (LocalDateTime) cc.getAsObject(null, null, source);
+	    final LocalDateTime string = (LocalDateTime) cc.getAsObject(null, null, source);
 	    System.out.println("Intermediate (LocalDateTime): " + string);
-	    String target = cc.getAsString(null, null, string);
+	    final String target = cc.getAsString(null, null, string);
 	    System.out.println("Target: " + target);
 
 	    assertThat(target, allOf(not(nullValue()), equalTo(target)));

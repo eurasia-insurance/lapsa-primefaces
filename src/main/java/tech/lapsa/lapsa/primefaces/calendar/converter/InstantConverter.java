@@ -12,7 +12,7 @@ import javax.faces.convert.FacesConverter;
  * Converter for Primefaces p:calendar converting values loosing nano-seconds
  * part because p:calendar does not allow to enter a nano-second part of the
  * Instant value
- * 
+ *
  * @author Vadim.Isaev
  *
  */
@@ -26,13 +26,13 @@ public class InstantConverter extends ATemporalConverter<Instant> {
     }
 
     @Override
-    protected Instant convertString(String value) {
+    protected Instant convertString(final String value) {
 	try {
 	    return LocalDateTime.from( //
 		    Formatters.DATE_TIME_FORMATTER.parse(value)) //
 		    .atZone(DEFAULT_ZONE_ID) //
 		    .toInstant();
-	} catch (DateTimeException e) {
+	} catch (final DateTimeException e) {
 	    return LocalDate.from( //
 		    Formatters.DATE_FORMATTER.parse(value)) //
 		    .atStartOfDay() //
@@ -43,7 +43,7 @@ public class InstantConverter extends ATemporalConverter<Instant> {
     }
 
     @Override
-    protected String convertObject(Instant value) {
+    protected String convertObject(final Instant value) {
 	return Formatters.DATE_TIME_FORMATTER //
 		.format(value.atZone(DEFAULT_ZONE_ID).toLocalDateTime());
     }

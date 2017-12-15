@@ -12,12 +12,12 @@ public class LocalDateConverter extends ATemporalConverter<LocalDate> {
     }
 
     @Override
-    protected LocalDate convertString(String value) {
+    protected LocalDate convertString(final String value) {
 	return LocalDate.from(Formatters.DATE_FORMATTER.parse(value));
     }
 
     @Override
-    protected String convertObject(LocalDate value) {
+    protected String convertObject(final LocalDate value) {
 	return Formatters.DATE_FORMATTER.format(value);
     }
 }

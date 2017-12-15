@@ -13,7 +13,7 @@ public abstract class ATemporalConverter<T> implements Converter {
 
     private final Class<T> clazz;
 
-    protected ATemporalConverter(Class<T> clazz) {
+    protected ATemporalConverter(final Class<T> clazz) {
 	this.clazz = MyObjects.requireNonNull(clazz, "clazz");
     }
 
@@ -22,18 +22,18 @@ public abstract class ATemporalConverter<T> implements Converter {
     protected abstract String convertObject(T value);
 
     @Override
-    public Object getAsObject(FacesContext context, UIComponent component, String value) {
+    public Object getAsObject(final FacesContext context, final UIComponent component, final String value) {
 	if (MyObjects.isNull(value))
 	    return null;
 	try {
 	    return convertString(value);
-	} catch (DateTimeException e) {
+	} catch (final DateTimeException e) {
 	    throw new ConverterException(e);
 	}
     }
 
     @Override
-    public String getAsString(FacesContext context, UIComponent component, Object value) {
+    public String getAsString(final FacesContext context, final UIComponent component, final Object value) {
 	if (MyObjects.isNull(value))
 	    return null;
 	try {
