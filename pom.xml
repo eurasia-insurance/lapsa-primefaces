@@ -9,7 +9,7 @@
 
 	<groupId>tech.lapsa.lapsa</groupId>
 	<artifactId>lapsa-primefaces</artifactId>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.1</version>
 	<packaging>jar</packaging>
 
 	<name>Lapsa Lib : Primefaces</name>
@@ -96,7 +96,7 @@
 	<scm>
 		<connection>scm:git:https://gitlab.lapsa.tech/lapsa/lapsa/primefaces.git</connection>
 		<developerConnection>scm:git:https://gitlab.lapsa.tech/lapsa/lapsa/primefaces.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>v1.1</tag>
 	</scm>
 
 	<issueManagement>
