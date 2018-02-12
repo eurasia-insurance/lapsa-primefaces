@@ -14,18 +14,18 @@
 		<cc:attribute name="title" required="false" type="java.lang.String" />
 		<cc:attribute name="changedListener"
 			method-signature="void listener()" default="#{void.onVoid}" />
+		<cc:attribute name="ajaxDelay" type="java.lang.Integer" default="1000" />
 		<cc:editableValueHolder name="value" />
 	</cc:interface>
 
 	<cc:implementation>
-		<p:calendar id="value" value="#{cc.attrs.value}" showOn="focus"
-			navigator="true" title="#{cc.attrs.title}"
-			pattern="yyyy-MM-dd HH:mm:ss" onfocus="select()"
+		<p:calendar id="value" value="#{cc.attrs.value}"
+			title="#{cc.attrs.title}" pages="3" showOn="button" navigator="true"
+			onfocus="select()" pattern="yyyy-MM-dd HH:mm:ss"
 			placeholder="#{cc.attrs.placeholder}">
-			<p:ajax event="dateSelect" process="#{cc.attrs.process}"
-				update="#{cc.attrs.update}" listener="#{cc.attrs.changedListener}" />
-			<p:ajax event="keyup" delay="700" process="#{cc.attrs.process}"
-				update="#{cc.attrs.update}" listener="#{cc.attrs.changedListener}" />
+			<p:ajax event="change" process="#{cc.attrs.process}"
+				delay="#{cc.attrs.ajaxDelay}" update="#{cc.attrs.update}"
+				listener="#{cc.attrs.changedListener}" />
 			<cc:insertChildren />
 		</p:calendar>
 	</cc:implementation>
