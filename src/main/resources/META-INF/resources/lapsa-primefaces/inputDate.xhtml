@@ -20,9 +20,10 @@
 
 	<cc:implementation>
 		<p:calendar id="value" value="#{cc.attrs.value}"
-			title="#{cc.attrs.title}" pages="3" showOn="button" navigator="true"
-			onfocus="select()" pattern="yyyy-MM-dd HH:mm:ss"
-			placeholder="#{cc.attrs.placeholder}">
+			title="#{cc.attrs.title}" pattern="yyyy-MM-dd HH:mm:ss"
+			placeholder="#{cc.attrs.placeholder}" mask="true"
+			maskAutoClear="true" pages="3" showOn="button" navigator="true"
+			onfocus="select()">
 			<p:ajax event="change" process="#{cc.attrs.process}"
 				delay="#{cc.attrs.ajaxDelay}" update="#{cc.attrs.update}"
 				listener="#{cc.attrs.changedListener}" />
