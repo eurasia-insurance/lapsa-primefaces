@@ -7,6 +7,8 @@
 
 	<cc:interface>
 		<cc:attribute name="value" required="true" type="java.time.LocalTime" />
+		<cc:attribute name="disabled" required="false"
+			type="java.lang.Boolean" default="#{false}" />
 		<cc:attribute name="process" required="false" type="java.lang.String" />
 		<cc:attribute name="update" required="false" type="java.lang.String" />
 		<cc:attribute name="placeholder" required="false"
@@ -24,7 +26,7 @@
 			converter="tech.lapsa.lapsa.primefaces.calendar.converter.LocalTimeConverter"
 			placeholder="#{cc.attrs.placeholder}" mask="true"
 			maskAutoClear="true" pages="3" showOn="button" navigator="true"
-			onfocus="select()">
+			onfocus="select()" disabled="#{cc.attrs.disabled}">
 			<p:ajax event="change" process="#{cc.attrs.process}"
 				delay="#{cc.attrs.ajaxDelay}" update="#{cc.attrs.update}"
 				listener="#{cc.attrs.changedListener}" />
