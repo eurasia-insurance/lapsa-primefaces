@@ -9,16 +9,16 @@
 
 	<groupId>tech.lapsa.lapsa</groupId>
 	<artifactId>lapsa-primefaces</artifactId>
-	<version>1.2</version>
+	<version>CURRENT-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Lapsa Lib : Primefaces</name>
 
 	<properties>
 		<!-- BOMS -->
-		<javax-javaee-bom.version>7.0a</javax-javaee-bom.version>
-		<java-commons.version>1.3</java-commons.version>
-		<javax-faces-commons.version>1.1</javax-faces-commons.version>
+		<javax-javaee-bom.version>CURRENT-SNAPSHOT</javax-javaee-bom.version>
+		<java-commons.version>CURRENT-SNAPSHOT</java-commons.version>
+		<javax-faces-commons.version>CURRENT-SNAPSHOT</javax-faces-commons.version>
 		<!-- external -->
 		<primefaces.version>6.1.13</primefaces.version>
 	</properties>
