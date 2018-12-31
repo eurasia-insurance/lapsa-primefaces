@@ -99,9 +99,4 @@
 		<tag>HEAD</tag>
 	</scm>
 
-	<issueManagement>
-		<system>gitlab</system>
-		<url>https://gitlab.lapsa.tech/lapsa/lapsa/primefaces/issues</url>
-	</issueManagement>
-
 </project>
