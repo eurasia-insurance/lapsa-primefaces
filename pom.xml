@@ -16,9 +16,9 @@
 
 	<properties>
 		<!-- BOMS -->
-		<javax-javaee-bom.version>20190317r6</javax-javaee-bom.version>
-		<java-commons.version>20190317r6</java-commons.version>
-		<javax-faces-commons.version>20190317r6</javax-faces-commons.version>
+		<javax-javaee-bom.version>CURRENT-SNAPSHOT</javax-javaee-bom.version>
+		<java-commons.version>CURRENT-SNAPSHOT</java-commons.version>
+		<javax-faces-commons.version>CURRENT-SNAPSHOT</javax-faces-commons.version>
 		<!-- external -->
 		<primefaces.version>6.1.13</primefaces.version>
 	</properties>
